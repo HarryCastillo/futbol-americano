@@ -136,35 +136,17 @@
     position: relative;
   }
 
-  .handles{
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 14px;
+  .brand-icon{
+    font-size: 40px;
     margin-bottom: 6px;
+    line-height: 1;
   }
-
-  .handle{
-    width: 24px;
-    height: 40px;
-    border: 3px solid var(--gold);
-    border-bottom: none;
-    border-radius: 20px 20px 0 0;
-    opacity: 0.85;
-  }
-
-  .handle.right{ transform: scaleX(-1); }
 
   @media (prefers-reduced-motion: no-preference){
-    .handle{ animation: sway 4.5s ease-in-out infinite; }
-    .handle.right{ animation-delay: .3s; animation-name: sway-right; }
-    @keyframes sway{
-      0%, 100% { transform: rotate(-1.5deg); }
-      50% { transform: rotate(1.5deg); }
-    }
-    @keyframes sway-right{
-      0%, 100% { transform: scaleX(-1) rotate(-1.5deg); }
-      50% { transform: scaleX(-1) rotate(1.5deg); }
+    .brand-icon{ animation: bounce 2.4s ease-in-out infinite; }
+    @keyframes bounce{
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
     }
   }
 
@@ -527,7 +509,7 @@
   }
 
   @media (max-width: 480px){
-    .handle{ width: 26px; height: 46px; }
+    .brand-icon{ font-size: 32px; }
     p.lead{ font-size: 16px; }
     .form-body{ padding: 20px 16px 22px; }
   }
@@ -1093,10 +1075,7 @@
         <!-- Vista: Inicio (hero + registro/login) -->
         <div class="form-view active" id="vista-inicio">
           <div class="hero-inicio">
-          <div class="handles" aria-hidden="true">
-            <div class="handle"></div>
-            <div class="handle right"></div>
-          </div>
+          <div class="brand-icon" aria-hidden="true">🏈</div>
           <p class="eyebrow">Quiniela Dabo</p>
           <h1>Da<span class="accent">bo</span></h1>
           <div class="season">Temporada <b>2026</b></div>
@@ -1237,7 +1216,7 @@
 
   <nav class="bottom-nav" id="bottomNav">
     <button type="button" class="nav-item" data-target="vista-autenticado">
-      <span class="nav-icon">⚽</span>
+      <span class="nav-icon">🏈</span>
       <span>Partidos</span>
     </button>
     <button type="button" class="nav-item" data-target="vista-inscritos" id="nav-inscritos">
